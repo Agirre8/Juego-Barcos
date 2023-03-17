@@ -1,8 +1,8 @@
-from clases.Case import *
-from clases.Barco import *
-from Conventions import *
-
-
+from clases import Conventions
+from clases import Case
+from clases import Barco
+from clases.Barco import generar_barcos
+from clases.Case import generar_casillas
 
 def __init__(self):
 # Creamos las casillas:

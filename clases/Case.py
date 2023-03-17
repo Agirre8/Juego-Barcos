@@ -1,7 +1,7 @@
-from clases.Tablero import *
-from clases.Barco import *
-from Conventions import *
-
+from clases import Barco #el . se refiere a la misma carpeta (clases)
+from clases import Tablero
+from clases.Convections import *
+from clases.Convections import generar_nombre_casilla
 
 instances = {}
 jugadas = set()
@@ -32,7 +32,7 @@ def jugar(self):
   self.jugadas.add(self)
   
   if self.barco is not None:
-      if len(casilla.barco.casillas - self.casillas_jugadas) == 0:
+      if len(Barco.casillas - self.casillas_jugadas) == 0:
           print("Hundido !!")
       else:
           print("Tocado !")

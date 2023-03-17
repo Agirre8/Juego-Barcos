@@ -2,14 +2,16 @@ from clases.Tablero import *
 from clases.Case import *
 from clases.Conventions import *
 
+
 instances = []
 casillas_ocupadas = set()
 
-def __init__(self, longitud):
+def __init__(self, longitud, casillas):
         self.longitud = longitud
         self.orientacion = choice(ORIENTACIONES)
         self.tocado = False
         self.hundido = False
+        self.casillas = casillas
 
         # performance / legibilidad:
         num_lineas = Conventions.tablero_num_lineas
@@ -34,20 +36,22 @@ def __init__(self, longitud):
                 self.casillas = {Case.instances[l + c]
                               for l, c in product(letras, repeat(cifra, longitud))}
 
-            for existente in Barco.instances:
+            for existente in instances:
                 if self.casillas.intersection(existente.casillas):
                     break  # break relativo al "for existente in barcos:"
             else:
                 # Agregar el barco en el contenedor de barcos
-                Barco.instances.append(self)
+                instances.append(self)
                 # Informar la casilla que contiene un barco.
                 for casilla in self.casillas:
                     casilla.barco = self
                 # Agregar estas casillas a las casillas ocupadas :
-                Barco.casillas_ocupadas |= self.casillas
+                    
+                    casillas_ocupadas |= self.casillas
                 break  # break relativo al "while True:"
 
 @classmethod
-def generar_barcos(cls):
-        for longitud in Conventions.barcos_longitud:
-            Barco(longitud)
+def generar_barcos(self, cls):
+    for longitud in Conventions.barcos_longitud:
+        self.longitud = longitud
+

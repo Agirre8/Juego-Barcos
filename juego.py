@@ -6,7 +6,7 @@ from random import shuffle, choice, random
 from clases.Case import *
 from clases.Barco import *
 from clases.Tablero import *
-from clases.Conventions import *
+from clases.Conventions import {tablero_num_columnas, tablero_num_lineas, gener}
 
 
 from introducir import (
@@ -53,12 +53,15 @@ def jugar_tirada(self):
             else:
                 casilla.jugar()
                 break
+def new_func():
+
+    tablero = Tablero()
+    return tablero
 
 def jugar_una_partida():
     """Algoritmo de una partida"""
     # Creamos un tablero de juego vacío
 
-    tablero = TaTablero()
 
     while True:
         tablero.ver()
