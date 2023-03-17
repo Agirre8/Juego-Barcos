@@ -3,6 +3,7 @@ import sys
 from itertools import cycle, chain, product, repeat
 from functools import reduce
 from random import shuffle, choice, random
+
 from clases.Case import *
 from clases.Barco import *
 from clases.Tablero import *
@@ -57,6 +58,8 @@ def new_func():
 
     tablero = Tablero()
     return tablero
+
+tablero = Tablero()
 
 def jugar_una_partida():
     """Algoritmo de una partida"""
