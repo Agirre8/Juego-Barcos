@@ -1,16 +1,15 @@
 from clases.Tablero import *
 from clases.Case import *
 from clases.Conventions import *
+from random import choice
+from itertools import product, repeat
 
 
 instances = []
 casillas_ocupadas = set()
 
 # performance / legibilidad:
-num_lineas = Conventions.tablero_num_lineas
-num_columnas = Conventions.tablero_num_columnas
-num2l = Conventions.generar_num_linea
-num2c = Conventions.generar_num_columna
+
 
 def __init__(self, longitud, casillas, orientacion, tocado, hundido):
         self.longitud = longitud

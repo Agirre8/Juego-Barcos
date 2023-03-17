@@ -4,6 +4,11 @@ from clases import Barco
 from clases.Barco import generar_barcos
 from clases.Case import generar_casillas
 
+num_lineas = Conventions.tablero_num_lineas
+num_columnas = Conventions.tablero_num_columnas
+num2l = Conventions.generar_num_linea
+num2c = Conventions.generar_num_columna
+
 def __init__(self):
 # Creamos las casillas:
   generar_casillas()
