@@ -11,7 +11,7 @@ casillas_ocupadas = set()
 # performance / legibilidad:
 
 
-def __init__(self, longitud, casillas, orientacion, tocado, hundido):
+def __init__(self, longitud, casillas, ):#el parametro no tiene que llevar la misma letra que los atributos
         self.longitud = longitud
         self.orientacion = choice(ORIENTACIONES)
         self.tocado = False
