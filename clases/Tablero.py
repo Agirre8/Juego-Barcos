@@ -8,7 +8,7 @@ num_lineas = Conventions.tablero_num_lineas
 num_columnas = Conventions.tablero_num_columnas
 num2l = Conventions.generar_num_linea
 num2c = Conventions.generar_num_columna
-
+#el innit tiene que estar dentro d euna clase
 def __init__(self):
 # Creamos las casillas:
   generar_casillas()
