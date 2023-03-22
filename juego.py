@@ -1,14 +1,11 @@
 import sys
-
 from itertools import cycle, chain, product, repeat
 from functools import reduce
 from random import shuffle, choice, random
 
-from clases.Case import *
+from clases.Case import instances
 from clases.Barco import *
-from clases.Tablero import *
-from clases.Conventions import (tablero_num_columnas, tablero_num_lineas, gener)
-
+from clases.Tablero import Tablero
 
 from introducir import (
     solicitar_introducir_numero_extremo,
@@ -30,10 +27,10 @@ HORIZONTAL = 0
 VERTICAL = 1
 
 ORIENTACIONES = (VERTICAL, HORIZONTAL)
-#.
+
 def probar_fin_juego(self):
         """Permite probar si el juego ha terminado o no"""
-        if len(Barco.casillas_ocupadas - self.casillas_jugadas) == 0:
+        if len(self.casillas_ocupadas - self.casillas_jugadas) == 0:
             print("Bravo. El juego ha terminado !")
             return True
 
@@ -46,7 +43,7 @@ def jugar_tirada(self):
             nombre_casilla = solicitar_introducir_casilla(
                 "Seleccionar una casilla (letra + cifra)")
             # Encontrar la casilla a partir de su nombre
-            casilla = Case.instances[nombre_casilla]
+            casilla = instances[nombre_casilla]
             # Probar si la casilla ya ha sido jugada
             if casilla.jugada:
                 print("Esta casilla ya ha sido jugada, elija otra",
@@ -59,7 +56,6 @@ def new_func():
     tablero = Tablero()
     return tablero
 
-tablero = Tablero()
 
 def jugar_una_partida():
     """Algoritmo de una partida"""
