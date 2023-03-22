@@ -7,7 +7,7 @@ from random import shuffle, choice, random
 from clases.Case import *
 from clases.Barco import *
 from clases.Tablero import *
-from clases.Conventions import {tablero_num_columnas, tablero_num_lineas, gener}
+from clases.Conventions import (tablero_num_columnas, tablero_num_lineas, gener)
 
 
 from introducir import (
